@@ -1,1683 +1,405 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dra. Ana Zanetti | Ortodontia & Harmonização Facial em Campinas</title>
-<meta name="description" content="Dra. Ana Zanetti – especialista em Ortodontia e Harmonização Facial em Campinas. Atendimento humanizado, resultados naturais e sorriso em harmonia com sua beleza.">
-<meta name="keywords" content="dentista em Campinas, harmonização facial em Campinas, ortodontia em Campinas, alinhadores invisíveis em Campinas, botox para bruxismo em Campinas, preenchimento labial em Campinas">
-<meta name="author" content="Dra. Ana Zanetti">
-<meta property="og:title" content="Dra. Ana Zanetti | Ortodontia & Harmonização Facial em Campinas">
-<meta property="og:description" content="Seu sorriso em harmonia com sua beleza. Ortodontia e harmonização facial com atendimento humanizado em Campinas.">
-<meta property="og:type" content="website">
- 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
- 
-<style>
-:root {
-  --white: #FDFCFA;
-  --cream: #F7F3EE;
-  --nude: #EDE3D8;
-  --rose: #D4A5A5;
-  --rose-deep: #B8877B;
-  --gold: #C9A96E;
-  --gold-light: #E8D5B0;
-  --sage: #A8B5A0;
-  --sage-light: #D4DCCF;
-  --text-dark: #2C2420;
-  --text-mid: #5C4F49;
-  --text-light: #8C7E79;
-  --font-display: 'Cormorant Garamond', serif;
-  --font-body: 'Jost', sans-serif;
-  --shadow: 0 8px 40px rgba(44,36,32,0.08);
-  --shadow-hover: 0 16px 60px rgba(44,36,32,0.14);
-  --radius: 2px;
-  --radius-lg: 16px;
-}
- 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
- 
-html { scroll-behavior: smooth; font-size: 16px; }
- 
-body {
-  font-family: var(--font-body);
-  background: var(--white);
-  color: var(--text-dark);
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
- 
-/* ── SCROLLBAR ─────────────────────────────── */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--cream); }
-::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
- 
-/* ── REVEAL ANIMATIONS ──────────────────────── */
-.reveal {
-  opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1);
-}
-.reveal.visible { opacity: 1; transform: translateY(0); }
-.reveal-left { opacity: 0; transform: translateX(-32px); transition: opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1); }
-.reveal-left.visible { opacity: 1; transform: translateX(0); }
-.reveal-right { opacity: 0; transform: translateX(32px); transition: opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1); }
-.reveal-right.visible { opacity: 1; transform: translateX(0); }
-.delay-1 { transition-delay: 0.1s; }
-.delay-2 { transition-delay: 0.2s; }
-.delay-3 { transition-delay: 0.3s; }
-.delay-4 { transition-delay: 0.4s; }
-.delay-5 { transition-delay: 0.5s; }
- 
-/* ── NAV ────────────────────────────────────── */
-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 1000;
-  padding: 0 5%;
-  height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: rgba(253,252,250,0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(201,169,110,0.15);
-  transition: box-shadow 0.3s;
-}
-nav.scrolled { box-shadow: 0 4px 30px rgba(44,36,32,0.08); }
- 
-.nav-logo {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: var(--text-dark);
-  letter-spacing: 0.02em;
-  text-decoration: none;
-}
-.nav-logo span { color: var(--gold); }
- 
-.nav-links {
-  display: flex;
-  gap: 2.4rem;
-  list-style: none;
-  align-items: center;
-}
-.nav-links a {
-  font-family: var(--font-body);
-  font-size: 0.78rem;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-mid);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.nav-links a:hover { color: var(--gold); }
- 
-.nav-cta {
-  background: var(--gold);
-  color: var(--white) !important;
-  padding: 0.55rem 1.4rem;
-  border-radius: 40px;
-  transition: background 0.2s, transform 0.2s !important;
-}
-.nav-cta:hover { background: var(--rose-deep) !important; transform: translateY(-1px); }
- 
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 4px;
-}
-.hamburger span {
-  width: 24px;
-  height: 1.5px;
-  background: var(--text-dark);
-  transition: all 0.3s;
-  display: block;
-}
- 
-/* ── HERO ───────────────────────────────────── */
-#hero {
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  position: relative;
-  overflow: hidden;
-  padding-top: 72px;
-}
- 
-.hero-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 6rem 5% 6rem 8%;
-  position: relative;
-  z-index: 2;
-}
- 
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.72rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 500;
-  margin-bottom: 2rem;
-}
-.hero-badge::before {
-  content: '';
-  width: 32px;
-  height: 1px;
-  background: var(--gold);
-}
- 
-.hero-title {
-  font-family: var(--font-display);
-  font-size: clamp(2.8rem, 5vw, 4.8rem);
-  font-weight: 300;
-  line-height: 1.1;
-  color: var(--text-dark);
-  margin-bottom: 1.6rem;
-  letter-spacing: -0.01em;
-}
-.hero-title em {
-  font-style: italic;
-  color: var(--rose-deep);
-}
- 
-.hero-sub {
-  font-size: 0.95rem;
-  font-weight: 300;
-  color: var(--text-light);
-  line-height: 1.8;
-  max-width: 380px;
-  margin-bottom: 2.8rem;
-  letter-spacing: 0.02em;
-}
- 
-.hero-btns {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
- 
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--text-dark);
-  color: var(--white);
-  padding: 0.9rem 2rem;
-  font-family: var(--font-body);
-  font-size: 0.78rem;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  text-decoration: none;
-  border-radius: 40px;
-  transition: all 0.3s;
-  border: none;
-  cursor: pointer;
-}
-.btn-primary:hover { background: var(--gold); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,169,110,0.35); }
- 
-.btn-outline {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: transparent;
-  color: var(--text-dark);
-  padding: 0.9rem 2rem;
-  font-family: var(--font-body);
-  font-size: 0.78rem;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  text-decoration: none;
-  border-radius: 40px;
-  border: 1px solid var(--nude);
-  transition: all 0.3s;
-  cursor: pointer;
-}
-.btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
- 
-.hero-right {
-  position: relative;
-  overflow: hidden;
-}
-.hero-right::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, var(--cream) 0%, var(--nude) 50%, var(--rose) 100%);
-  z-index: 1;
-}
-.hero-img-wrap {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  overflow: hidden;
-}
- 
-/* Decorative hero image placeholder with elegant dental illustration */
-.hero-illustration {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
- 
-.hero-illustration svg {
-  width: 80%;
-  max-width: 420px;
-  opacity: 0.9;
-  position: relative;
-  z-index: 3;
-}
- 
-.hero-overlay-text {
-  position: absolute;
-  bottom: 2.5rem;
-  left: 2.5rem;
-  z-index: 4;
-  background: rgba(253,252,250,0.88);
-  backdrop-filter: blur(12px);
-  padding: 1.2rem 1.6rem;
-  border-radius: 12px;
-  border: 1px solid rgba(201,169,110,0.2);
-}
-.hero-overlay-text p {
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-light);
-  margin-bottom: 0.25rem;
-}
-.hero-overlay-text strong {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: var(--text-dark);
-}
- 
-.hero-deco {
-  position: absolute;
-  width: 320px;
-  height: 320px;
-  border-radius: 50%;
-  border: 1px solid rgba(201,169,110,0.2);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-}
-.hero-deco-2 {
-  width: 520px;
-  height: 520px;
-  border: 1px solid rgba(201,169,110,0.1);
-}
- 
-/* ── SECTION BASE ────────────────────────────── */
-section { padding: 7rem 8% 7rem; }
-.section-label {
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 1rem;
-}
-.section-label::after { content: ''; flex: 1; max-width: 40px; height: 1px; background: var(--gold); }
- 
-.section-title {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 3.5vw, 3.2rem);
-  font-weight: 300;
-  line-height: 1.15;
-  color: var(--text-dark);
-  margin-bottom: 1rem;
-}
-.section-title em { font-style: italic; color: var(--rose-deep); }
- 
-.section-sub {
-  font-size: 0.92rem;
-  font-weight: 300;
-  color: var(--text-light);
-  line-height: 1.9;
-  max-width: 520px;
-}
- 
-/* ── ABOUT ──────────────────────────────────── */
-#sobre {
-  background: var(--cream);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6rem;
-  align-items: center;
-}
- 
-.about-img-wrap {
-  position: relative;
-}
-.about-img-frame {
-  width: 100%;
-  padding-bottom: 120%;
-  background: linear-gradient(160deg, var(--nude) 0%, var(--rose) 60%, var(--rose-deep) 100%);
-  border-radius: var(--radius-lg);
-  position: relative;
-  overflow: hidden;
-}
-.about-img-deco {
-  position: absolute;
-  bottom: -20px;
-  right: -20px;
-  width: 160px;
-  height: 160px;
-  background: var(--gold-light);
-  border-radius: 50%;
-  z-index: 0;
-}
-.about-badge {
-  position: absolute;
-  top: 2rem;
-  right: -1.5rem;
-  background: var(--white);
-  padding: 1rem 1.4rem;
-  border-radius: 12px;
-  box-shadow: var(--shadow);
-  z-index: 2;
-  text-align: center;
-  border: 1px solid var(--gold-light);
-}
-.about-badge-num {
-  font-family: var(--font-display);
-  font-size: 2.2rem;
-  font-weight: 500;
-  color: var(--gold);
-  line-height: 1;
-}
-.about-badge-text {
-  font-size: 0.65rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-light);
-  margin-top: 4px;
-}
- 
-.about-content {}
-.about-cro {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--sage-light);
-  color: var(--text-mid);
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 0.4rem 1rem;
-  border-radius: 40px;
-  margin-bottom: 2rem;
-  font-weight: 500;
-}
- 
-.about-text {
-  font-size: 0.92rem;
-  font-weight: 300;
-  color: var(--text-mid);
-  line-height: 1.95;
-  margin-bottom: 1rem;
-}
- 
-.about-specialties {
-  display: flex;
-  gap: 1rem;
-  margin-top: 2rem;
-  flex-wrap: wrap;
-}
-.specialty-pill {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 0.5rem 1.1rem;
-  border: 1px solid var(--gold-light);
-  border-radius: 40px;
-  font-size: 0.75rem;
-  font-weight: 400;
-  color: var(--text-mid);
-  letter-spacing: 0.05em;
-}
-.specialty-pill::before { content: '✦'; color: var(--gold); font-size: 0.6rem; }
- 
-/* ── TREATMENTS ──────────────────────────────── */
-#tratamentos {
-  background: var(--white);
-}
-.treatments-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 4rem;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
- 
-.treatments-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
- 
-.treatment-card {
-  background: var(--cream);
-  border-radius: var(--radius-lg);
-  padding: 2.2rem;
-  border: 1px solid transparent;
-  transition: all 0.35s cubic-bezier(.4,0,.2,1);
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-}
-.treatment-card::before {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--gold), var(--rose));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.35s;
-}
-.treatment-card:hover { background: var(--white); border-color: var(--nude); box-shadow: var(--shadow-hover); transform: translateY(-4px); }
-.treatment-card:hover::before { transform: scaleX(1); }
- 
-.treatment-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, var(--gold-light), var(--nude));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.4rem;
-  font-size: 1.4rem;
-}
-.treatment-title {
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  font-weight: 500;
-  color: var(--text-dark);
-  margin-bottom: 0.7rem;
-  line-height: 1.2;
-}
-.treatment-desc {
-  font-size: 0.83rem;
-  font-weight: 300;
-  color: var(--text-light);
-  line-height: 1.8;
-  margin-bottom: 1.4rem;
-}
-.treatment-link {
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--gold);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: gap 0.2s;
-}
-.treatment-link:hover { gap: 10px; }
- 
-/* ── DIFERENCIAIS ────────────────────────────── */
-#diferenciais {
-  background: var(--text-dark);
-  color: var(--white);
-}
-#diferenciais .section-label { color: var(--gold-light); }
-#diferenciais .section-label::after { background: var(--gold-light); }
-#diferenciais .section-title { color: var(--white); }
-#diferenciais .section-title em { color: var(--rose); }
-#diferenciais .section-sub { color: rgba(253,252,250,0.6); }
- 
-.diff-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  margin-top: 4rem;
-}
-.diff-card {
-  border-top: 1px solid rgba(201,169,110,0.3);
-  padding-top: 1.8rem;
-}
-.diff-num {
-  font-family: var(--font-display);
-  font-size: 3.5rem;
-  font-weight: 300;
-  color: rgba(201,169,110,0.25);
-  line-height: 1;
-  margin-bottom: 0.8rem;
-}
-.diff-title {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: var(--white);
-  margin-bottom: 0.8rem;
-}
-.diff-text {
-  font-size: 0.83rem;
-  font-weight: 300;
-  color: rgba(253,252,250,0.55);
-  line-height: 1.85;
-}
- 
-/* ── RESULTADOS ──────────────────────────────── */
-#resultados {
-  background: var(--cream);
-}
-.results-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin-top: 3.5rem;
-}
-.result-card {
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  position: relative;
-  aspect-ratio: 4/5;
-  cursor: pointer;
-  transition: transform 0.35s;
-}
-.result-card:hover { transform: scale(1.02); }
-.result-card:hover .result-overlay { opacity: 1; }
- 
-.result-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
- 
-/* Elegant placeholder for result images */
-.result-placeholder {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(160deg, var(--nude) 0%, var(--rose) 60%, var(--rose-deep) 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-}
-.result-placeholder-icon {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: rgba(253,252,250,0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.8rem;
-}
-.result-placeholder-text {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  color: rgba(253,252,250,0.7);
-  text-align: center;
-  font-style: italic;
-}
- 
-.result-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(44,36,32,0.7) 0%, transparent 60%);
-  opacity: 0;
-  transition: opacity 0.35s;
-  display: flex;
-  align-items: flex-end;
-  padding: 1.5rem;
-}
-.result-overlay-text {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  color: var(--white);
-  font-style: italic;
-}
- 
-.results-disclaimer {
-  margin-top: 2rem;
-  text-align: center;
-  font-size: 0.72rem;
-  color: var(--text-light);
-  font-style: italic;
-  letter-spacing: 0.03em;
-}
- 
-/* ── DEPOIMENTOS ─────────────────────────────── */
-#depoimentos {
-  background: var(--white);
-}
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin-top: 3.5rem;
-}
-.testimonial-card {
-  background: var(--cream);
-  border-radius: var(--radius-lg);
-  padding: 2.2rem;
-  position: relative;
-  border: 1px solid transparent;
-  transition: all 0.3s;
-}
-.testimonial-card:hover { border-color: var(--gold-light); box-shadow: var(--shadow); }
- 
-.testimonial-quote {
-  font-family: var(--font-display);
-  font-size: 3.5rem;
-  color: var(--gold-light);
-  line-height: 1;
-  margin-bottom: 1rem;
-  font-weight: 300;
-}
-.testimonial-text {
-  font-size: 0.88rem;
-  font-weight: 300;
-  color: var(--text-mid);
-  line-height: 1.9;
-  margin-bottom: 1.5rem;
-  font-style: italic;
-}
-.testimonial-author {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-}
-.testimonial-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--nude), var(--rose));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--white);
-}
-.testimonial-name {
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--text-dark);
-}
-.testimonial-role {
-  font-size: 0.7rem;
-  color: var(--text-light);
-}
-.testimonial-stars {
-  margin-bottom: 0.8rem;
-  color: var(--gold);
-  font-size: 0.8rem;
-  letter-spacing: 2px;
-}
- 
-/* ── COMO FUNCIONA ───────────────────────────── */
-#como-funciona {
-  background: var(--cream);
-}
-.steps-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  margin-top: 4rem;
-  position: relative;
-}
-.steps-grid::before {
-  content: '';
-  position: absolute;
-  top: 2rem;
-  left: 12.5%;
-  right: 12.5%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold-light), var(--gold-light), transparent);
-  z-index: 0;
-}
-.step-card {
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
-.step-num {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: var(--white);
-  border: 2px solid var(--gold-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-size: 1.6rem;
-  font-weight: 500;
-  color: var(--gold);
-  margin: 0 auto 1.5rem;
-  transition: all 0.3s;
-}
-.step-card:hover .step-num { background: var(--gold); color: var(--white); border-color: var(--gold); }
-.step-title {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 500;
-  color: var(--text-dark);
-  margin-bottom: 0.6rem;
-}
-.step-text {
-  font-size: 0.82rem;
-  font-weight: 300;
-  color: var(--text-light);
-  line-height: 1.8;
-}
- 
-/* ── CTA ────────────────────────────────────── */
-#cta {
-  background: linear-gradient(135deg, var(--text-dark) 0%, #3D2F2A 50%, var(--text-dark) 100%);
-  text-align: center;
-  padding: 7rem 8%;
-  position: relative;
-  overflow: hidden;
-}
-#cta::before {
-  content: '';
-  position: absolute;
-  top: -100px;
-  right: -100px;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(201,169,110,0.12) 0%, transparent 70%);
-}
-#cta::after {
-  content: '';
-  position: absolute;
-  bottom: -100px;
-  left: -100px;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(212,165,165,0.1) 0%, transparent 70%);
-}
- 
-.cta-label { color: var(--gold-light); }
-.cta-label::after { background: var(--gold-light); }
-.cta-title {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3.8rem);
-  font-weight: 300;
-  color: var(--white);
-  margin-bottom: 1.2rem;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.15;
-}
-.cta-title em { color: var(--rose); font-style: italic; }
-.cta-sub {
-  font-size: 0.92rem;
-  color: rgba(253,252,250,0.6);
-  font-weight: 300;
-  margin-bottom: 2.8rem;
-  max-width: 480px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.8;
-}
-.btn-whatsapp {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: #25D366;
-  color: var(--white);
-  padding: 1rem 2.2rem;
-  font-family: var(--font-body);
-  font-size: 0.82rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  text-decoration: none;
-  border-radius: 40px;
-  transition: all 0.3s;
-  border: none;
-  cursor: pointer;
-}
-.btn-whatsapp:hover { background: #1da855; transform: translateY(-3px); box-shadow: 0 12px 32px rgba(37,211,102,0.35); }
- 
-/* ── CONTACT ────────────────────────────────── */
-#contato {
-  background: var(--white);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
-  align-items: start;
-}
- 
-.contact-info {}
-.contact-item {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1.8rem;
-  align-items: flex-start;
-}
-.contact-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: var(--cream);
-  border: 1px solid var(--nude);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  flex-shrink: 0;
-  transition: all 0.3s;
-}
-.contact-item:hover .contact-icon { background: var(--gold-light); border-color: var(--gold); }
-.contact-item-label {
-  font-size: 0.68rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-light);
-  margin-bottom: 4px;
-  font-weight: 500;
-}
-.contact-item-value {
-  font-size: 0.9rem;
-  color: var(--text-dark);
-  font-weight: 400;
-}
-.contact-item-value a {
-  color: var(--text-dark);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.contact-item-value a:hover { color: var(--gold); }
- 
-.map-wrap {
-  width: 100%;
-  height: 220px;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  margin-top: 2rem;
-  background: linear-gradient(135deg, var(--nude), var(--cream));
-  border: 1px solid var(--nude);
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-.map-wrap:hover { box-shadow: var(--shadow-hover); }
-.map-placeholder {
-  text-align: center;
-  color: var(--text-light);
-}
-.map-placeholder-icon { font-size: 2rem; margin-bottom: 0.5rem; }
-.map-placeholder-text { font-size: 0.82rem; letter-spacing: 0.05em; }
- 
-/* Contact form */
-.contact-form {}
-.form-group { margin-bottom: 1.4rem; }
-.form-label {
-  display: block;
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-light);
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-}
-.form-input, .form-select, .form-textarea {
-  width: 100%;
-  padding: 0.85rem 1.1rem;
-  background: var(--cream);
-  border: 1px solid var(--nude);
-  border-radius: 8px;
-  font-family: var(--font-body);
-  font-size: 0.88rem;
-  color: var(--text-dark);
-  transition: all 0.25s;
-  outline: none;
-  -webkit-appearance: none;
-}
-.form-input:focus, .form-select:focus, .form-textarea:focus {
-  border-color: var(--gold);
-  background: var(--white);
-  box-shadow: 0 0 0 3px rgba(201,169,110,0.12);
-}
-.form-textarea { resize: vertical; min-height: 120px; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
- 
-/* ── FOOTER ─────────────────────────────────── */
-footer {
-  background: var(--text-dark);
-  color: rgba(253,252,250,0.5);
-  padding: 3rem 8%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 2rem;
-  align-items: center;
-}
-.footer-logo {
-  font-family: var(--font-display);
-  font-size: 1.4rem;
-  font-weight: 500;
-  color: var(--white);
-}
-.footer-logo span { color: var(--gold); }
-.footer-logo-sub {
-  font-size: 0.7rem;
-  color: rgba(253,252,250,0.4);
-  margin-top: 0.3rem;
-  letter-spacing: 0.1em;
-}
-.footer-center { text-align: center; }
-.footer-copy {
-  font-size: 0.72rem;
-  letter-spacing: 0.05em;
-  line-height: 1.7;
-}
-.footer-social { display: flex; gap: 1rem; justify-content: flex-end; }
-.social-link {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1px solid rgba(201,169,110,0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(253,252,250,0.6);
-  text-decoration: none;
-  font-size: 1rem;
-  transition: all 0.3s;
-}
-.social-link:hover { background: var(--gold); border-color: var(--gold); color: var(--white); }
- 
-/* ── WHATSAPP FLOAT ──────────────────────────── */
-.whatsapp-float {
-  position: fixed;
-  bottom: 2.5rem;
-  right: 2.5rem;
-  z-index: 999;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: #25D366;
-  color: var(--white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.6rem;
-  text-decoration: none;
-  box-shadow: 0 8px 32px rgba(37,211,102,0.4);
-  transition: all 0.3s;
-  animation: pulse 3s infinite;
-}
-.whatsapp-float:hover { transform: scale(1.1); background: #1da855; }
- 
-@keyframes pulse {
-  0%, 100% { box-shadow: 0 8px 32px rgba(37,211,102,0.4); }
-  50% { box-shadow: 0 8px 48px rgba(37,211,102,0.6); }
-}
- 
-/* ── MOBILE NAV ──────────────────────────────── */
-.mobile-menu {
-  display: none;
-  position: fixed;
-  top: 72px; left: 0; right: 0;
-  background: rgba(253,252,250,0.98);
-  backdrop-filter: blur(20px);
-  padding: 2rem 5%;
-  z-index: 999;
-  border-bottom: 1px solid var(--nude);
-  flex-direction: column;
-  gap: 1.5rem;
-}
-.mobile-menu.open { display: flex; }
-.mobile-menu a {
-  font-size: 0.85rem;
-  font-weight: 400;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-mid);
-  text-decoration: none;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid var(--cream);
-  transition: color 0.2s;
-}
-.mobile-menu a:hover { color: var(--gold); }
- 
-/* ── RESPONSIVE ──────────────────────────────── */
-@media (max-width: 1100px) {
-  .treatments-grid { grid-template-columns: repeat(2, 1fr); }
-  .diff-grid { grid-template-columns: repeat(2, 1fr); }
-  .steps-grid::before { display: none; }
-}
- 
-@media (max-width: 900px) {
-  #hero { grid-template-columns: 1fr; min-height: auto; }
-  .hero-left { padding: 5rem 5% 3rem; }
-  .hero-right { height: 55vw; min-height: 300px; }
-  #sobre { grid-template-columns: 1fr; gap: 3rem; }
-  .about-img-wrap { display: none; }
-  #contato { grid-template-columns: 1fr; gap: 3rem; }
-  .testimonials-grid { grid-template-columns: 1fr; }
-  .results-grid { grid-template-columns: repeat(2, 1fr); }
-  footer { grid-template-columns: 1fr; text-align: center; }
-  .footer-social { justify-content: center; }
-  .nav-links { display: none; }
-  .hamburger { display: flex; }
-}
- 
-@media (max-width: 640px) {
-  section { padding: 5rem 5%; }
-  #hero { padding-top: 72px; }
-  .treatments-grid { grid-template-columns: 1fr; }
-  .diff-grid { grid-template-columns: 1fr; }
-  .steps-grid { grid-template-columns: repeat(2, 1fr); }
-  .results-grid { grid-template-columns: 1fr; }
-  .form-row { grid-template-columns: 1fr; }
-  .hero-title { font-size: 2.4rem; }
-  .hero-btns { flex-direction: column; }
-  .btn-primary, .btn-outline { justify-content: center; }
-  .treatments-header { flex-direction: column; align-items: flex-start; }
-}
-</style>
-</head>
-<body>
- 
-<!-- ═══ NAV ═══════════════════════════════════════════ -->
-<nav id="navbar">
-  <a href="#hero" class="nav-logo">Dra. Ana <span>Zanetti</span></a>
-  <ul class="nav-links">
-    <li><a href="#sobre">Sobre</a></li>
-    <li><a href="#tratamentos">Tratamentos</a></li>
-    <li><a href="#resultados">Resultados</a></li>
-    <li><a href="#depoimentos">Depoimentos</a></li>
-    <li><a href="#contato">Contato</a></li>
-    <li><a href="https://wa.me/5519999999999?text=Olá! Gostaria de agendar uma consulta." target="_blank" class="nav-cta">Agendar consulta</a></li>
-  </ul>
-  <button class="hamburger" id="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
- 
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#sobre" onclick="closeMobile()">Sobre</a>
-  <a href="#tratamentos" onclick="closeMobile()">Tratamentos</a>
-  <a href="#resultados" onclick="closeMobile()">Resultados</a>
-  <a href="#depoimentos" onclick="closeMobile()">Depoimentos</a>
-  <a href="#contato" onclick="closeMobile()">Contato</a>
-  <a href="https://wa.me/5519999999999" target="_blank" style="color: #25D366 !important;">📱 Agendar via WhatsApp</a>
-</div>
- 
-<!-- ═══ HERO ══════════════════════════════════════════ -->
-<section id="hero">
-  <div class="hero-left">
-    <div class="hero-badge reveal">Campinas · SP · Ortodontia & Harmonização Facial</div>
-    <h1 class="hero-title reveal delay-1">
-      Seu sorriso em<br>harmonia com<br><em>sua beleza</em>
-    </h1>
-    <p class="hero-sub reveal delay-2">
-      Ortodontia refinada, harmonização facial e cuidado humanizado para revelar o melhor de você — com naturalidade e elegância.
-    </p>
-    <div class="hero-btns reveal delay-3">
-      <a href="https://wa.me/5519999999999?text=Olá! Gostaria de agendar uma consulta." target="_blank" class="btn-primary">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Agendar consulta
-      </a>
-      <a href="#tratamentos" class="btn-outline">
-        Conhecer tratamentos →
-      </a>
-    </div>
-  </div>
-  <div class="hero-right">
-    <div class="hero-deco"></div>
-    <div class="hero-deco hero-deco-2"></div>
-    <div class="hero-img-wrap">
-      <div class="hero-illustration">
-        <svg viewBox="0 0 380 460" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Silhouette elegante -->
-          <ellipse cx="190" cy="200" rx="110" ry="140" fill="rgba(253,252,250,0.12)"/>
-          <!-- Rosto estilizado -->
-          <ellipse cx="190" cy="175" rx="72" ry="88" fill="rgba(253,252,250,0.15)" stroke="rgba(201,169,110,0.3)" stroke-width="1"/>
-          <!-- Cabelo -->
-          <path d="M118 140 Q125 80 190 70 Q255 80 262 140" stroke="rgba(253,252,250,0.2)" stroke-width="2" fill="rgba(44,36,32,0.15)"/>
-          <!-- Sorriso - dentes -->
-          <rect x="165" y="205" width="50" height="20" rx="8" fill="rgba(253,252,250,0.8)" stroke="rgba(201,169,110,0.4)" stroke-width="0.5"/>
-          <!-- Linha do sorriso -->
-          <path d="M165 215 Q190 225 215 215" stroke="rgba(201,169,110,0.5)" stroke-width="1" fill="none"/>
-          <!-- Dentes individuais -->
-          <line x1="178" y1="205" x2="178" y2="225" stroke="rgba(201,169,110,0.2)" stroke-width="0.5"/>
-          <line x1="190" y1="205" x2="190" y2="225" stroke="rgba(201,169,110,0.2)" stroke-width="0.5"/>
-          <line x1="202" y1="205" x2="202" y2="225" stroke="rgba(201,169,110,0.2)" stroke-width="0.5"/>
-          <!-- Olhos -->
-          <ellipse cx="166" cy="175" rx="10" ry="6" fill="rgba(44,36,32,0.3)"/>
-          <ellipse cx="214" cy="175" rx="10" ry="6" fill="rgba(44,36,32,0.3)"/>
-          <!-- Reflexo olhos -->
-          <circle cx="170" cy="172" r="2" fill="rgba(253,252,250,0.6)"/>
-          <circle cx="218" cy="172" r="2" fill="rgba(253,252,250,0.6)"/>
-          <!-- Nariz -->
-          <path d="M185 185 Q190 195 195 185" stroke="rgba(44,36,32,0.2)" stroke-width="1.5" fill="none"/>
-          <!-- Sobrancelhas -->
-          <path d="M153 163 Q166 157 177 162" stroke="rgba(44,36,32,0.3)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-          <path d="M203 162 Q214 157 227 163" stroke="rgba(44,36,32,0.3)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-          <!-- Brilho dourado -->
-          <circle cx="300" cy="80" r="40" fill="rgba(201,169,110,0.08)"/>
-          <circle cx="300" cy="80" r="20" fill="rgba(201,169,110,0.12)"/>
-          <!-- Sparkles -->
-          <path d="M310 50 L312 58 L320 60 L312 62 L310 70 L308 62 L300 60 L308 58 Z" fill="rgba(201,169,110,0.5)"/>
-          <path d="M80 300 L81.5 305 L87 306.5 L81.5 308 L80 313 L78.5 308 L73 306.5 L78.5 305 Z" fill="rgba(212,165,165,0.4)"/>
-          <path d="M320 280 L321 283 L324 284 L321 285 L320 288 L319 285 L316 284 L319 283 Z" fill="rgba(201,169,110,0.35)"/>
-          <!-- Ombros / corpo estilizado -->
-          <path d="M118 263 Q100 290 90 340 L290 340 Q280 290 262 263" stroke="rgba(253,252,250,0.15)" stroke-width="1" fill="rgba(253,252,250,0.06)"/>
-          <!-- Colar -->
-          <ellipse cx="190" cy="270" rx="30" ry="8" stroke="rgba(201,169,110,0.35)" stroke-width="1" fill="none"/>
-          <circle cx="190" cy="278" r="4" fill="rgba(201,169,110,0.4)"/>
-          <!-- Reflexo brilho cabelo -->
-          <path d="M150 100 Q175 88 200 95" stroke="rgba(253,252,250,0.15)" stroke-width="2" fill="none" stroke-linecap="round"/>
-        </svg>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dra. Ana Zanetti | Dentista em Campinas</title>
+    <meta
+      name="description"
+      content="Dra. Ana Zanetti, dentista em Campinas com foco em ortodontia, alinhadores invisíveis e harmonização facial. Agende sua consulta pelo WhatsApp."
+    />
+    <meta
+      name="keywords"
+      content="dentista em Campinas, harmonização facial em Campinas, ortodontia em Campinas, alinhadores invisíveis em Campinas, botox para bruxismo em Campinas, preenchimento labial em Campinas"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="nav-shell">
+          <a href="#inicio" class="brand">
+            <div class="brand-mark">AZ</div>
+            <div>
+              <p class="brand-title">Dra. Ana Zanetti</p>
+              <p class="brand-subtitle">Odontologia estética em Campinas</p>
+            </div>
+          </a>
+
+          <nav class="desktop-nav">
+            <a href="#sobre">Sobre</a>
+            <a href="#tratamentos">Tratamentos</a>
+            <a href="#resultados">Resultados</a>
+            <a href="#depoimentos">Depoimentos</a>
+            <a href="#contato">Contato</a>
+          </nav>
+
+          <a class="btn btn-primary nav-cta" target="_blank" rel="noreferrer" href="https://wa.me/5511999999999?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Ana%20Zanetti.">Agendar consulta</a>
+
+          <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+        </div>
+
+        <nav class="mobile-nav" id="mobileNav">
+          <a href="#sobre">Sobre</a>
+          <a href="#tratamentos">Tratamentos</a>
+          <a href="#resultados">Resultados</a>
+          <a href="#depoimentos">Depoimentos</a>
+          <a href="#contato">Contato</a>
+          <a class="btn btn-primary" target="_blank" rel="noreferrer" href="https://wa.me/5511999999999?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Ana%20Zanetti.">Agendar consulta</a>
+        </nav>
       </div>
-    </div>
-    <div class="hero-overlay-text reveal delay-4">
-      <p>Especialista em</p>
-      <strong>Sorriso & Harmonização</strong>
-    </div>
-  </div>
-</section>
- 
-<!-- ═══ SOBRE ══════════════════════════════════════════ -->
-<section id="sobre">
-  <div class="about-img-wrap reveal-left">
-    <div class="about-img-frame">
-      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1;">
-        <svg viewBox="0 0 260 300" width="70%" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="130" cy="130" rx="80" ry="95" fill="rgba(253,252,250,0.15)"/>
-          <ellipse cx="130" cy="115" rx="52" ry="65" fill="rgba(253,252,250,0.2)" stroke="rgba(253,252,250,0.3)" stroke-width="1"/>
-          <path d="M78 100 Q85 50 130 42 Q175 50 182 100" fill="rgba(44,36,32,0.3)"/>
-          <rect x="107" y="145" width="46" height="17" rx="7" fill="rgba(253,252,250,0.9)"/>
-          <path d="M107 153 Q130 163 153 153" stroke="rgba(201,169,110,0.6)" stroke-width="1" fill="none"/>
-          <line x1="119" y1="145" x2="119" y2="162" stroke="rgba(201,169,110,0.25)" stroke-width="0.5"/>
-          <line x1="130" y1="145" x2="130" y2="162" stroke="rgba(201,169,110,0.25)" stroke-width="0.5"/>
-          <line x1="141" y1="145" x2="141" y2="162" stroke="rgba(201,169,110,0.25)" stroke-width="0.5"/>
-          <ellipse cx="110" cy="120" rx="8" ry="5" fill="rgba(44,36,32,0.35)"/>
-          <ellipse cx="150" cy="120" rx="8" ry="5" fill="rgba(44,36,32,0.35)"/>
-          <circle cx="113" cy="118" r="1.5" fill="rgba(253,252,250,0.7)"/>
-          <circle cx="153" cy="118" r="1.5" fill="rgba(253,252,250,0.7)"/>
-          <path d="M82 200 Q78 230 72 260 L188 260 Q182 230 178 200" fill="rgba(253,252,250,0.1)"/>
-          <!-- jaleco -->
-          <path d="M100 185 Q110 195 130 198 Q150 195 160 185 L165 260 L95 260 Z" fill="rgba(253,252,250,0.18)" stroke="rgba(253,252,250,0.2)" stroke-width="1"/>
-        </svg>
-      </div>
-    </div>
-    <div class="about-img-deco"></div>
-    <div class="about-badge">
-      <div class="about-badge-num">8+</div>
-      <div class="about-badge-text">Anos de<br>Experiência</div>
-    </div>
-  </div>
-  <div class="about-content reveal-right">
-    <div class="section-label">Sobre a Doutora</div>
-    <h2 class="section-title">Cuidado com <em>propósito</em> e excelência</h2>
-    <span class="about-cro">🦷 CRO-SP 000000</span>
-    <p class="about-text">
-      Formada em Odontologia com especialização em Ortodontia e pós-graduação em Harmonização Orofacial, a Dra. Ana Zanetti acredita que cada sorriso conta uma história única — e merece um tratamento à altura.
-    </p>
-    <p class="about-text">
-      Com mais de 8 anos dedicados à odontologia estética e ao bem-estar dos seus pacientes, ela alia técnica apurada, olhar artístico e escuta atenta para construir resultados que vão além do sorriso: transformam a autoestima e a relação de cada pessoa com a própria beleza.
-    </p>
-    <p class="about-text">
-      Cada consulta em Campinas é pensada para ser acolhedora, transparente e completamente personalizada. Porque você merece um cuidado feito especialmente para você.
-    </p>
-    <div class="about-specialties">
-      <span class="specialty-pill">Ortodontia</span>
-      <span class="specialty-pill">Harmonização Facial</span>
-      <span class="specialty-pill">Alinhadores Invisíveis</span>
-      <span class="specialty-pill">Botox Terapêutico</span>
-    </div>
-  </div>
-</section>
- 
-<!-- ═══ TRATAMENTOS ═══════════════════════════════════ -->
-<section id="tratamentos">
-  <div class="treatments-header">
-    <div>
-      <div class="section-label reveal">Especialidades</div>
-      <h2 class="section-title reveal delay-1">Tratamentos para <em>realçar</em><br>o melhor de você</h2>
-    </div>
-    <p class="section-sub reveal delay-2">Cada procedimento é planejado de forma individualizada, respeitando sua harmonia natural e seus objetivos de vida.</p>
-  </div>
-  <div class="treatments-grid">
- 
-    <div class="treatment-card reveal delay-1">
-      <div class="treatment-icon">🦷</div>
-      <h3 class="treatment-title">Ortodontia</h3>
-      <p class="treatment-desc">Correção da posição dos dentes com aparelhos modernos e confortáveis, para um sorriso alinhado e funcional.</p>
-      <a href="https://wa.me/5519999999999?text=Olá! Tenho interesse em Ortodontia." target="_blank" class="treatment-link">Agendar avaliação →</a>
-    </div>
- 
-    <div class="treatment-card reveal delay-2">
-      <div class="treatment-icon">✨</div>
-      <h3 class="treatment-title">Alinhadores Invisíveis</h3>
-      <p class="treatment-desc">Invisalign e alinhadores personalizados para corrigir o sorriso sem aparelho fixo, com total discrição e conforto.</p>
-      <a href="https://wa.me/5519999999999?text=Olá! Gostaria de saber sobre Alinhadores Invisíveis." target="_blank" class="treatment-link">Agendar avaliação →</a>
-    </div>
- 
-    <div class="treatment-card reveal delay-3">
-      <div class="treatment-icon">💫</div>
-      <h3 class="treatment-title">Harmonização Facial</h3>
-      <p class="treatment-desc">Procedimentos minimamente invasivos para equilibrar os traços do rosto, realçar a beleza natural e restaurar jovialidade.</p>
-      <a href="https://wa.me/5519999999999?text=Olá! Quero saber mais sobre Harmonização Facial." target="_blank" class="treatment-link">Agendar avaliação →</a>
-    </div>
- 
-    <div class="treatment-card reveal delay-1">
-      <div class="treatment-icon">💉</div>
-      <h3 class="treatment-title">Botox Terapêutico</h3>
-      <p class="treatment-desc">Aplicação de toxina botulínica para tratamento de bruxismo, dores de cabeça tensionais e prevenção de rugas de expressão.</p>
-      <a href="https://wa.me/5519999999999?text=Olá! Gostaria de informações sobre Botox Terapêutico." target="_blank" class="treatment-link">Agendar avaliação →</a>
-    </div>
- 
-    <div class="treatment-card reveal delay-2">
-      <div class="treatment-icon">💋</div>
-      <h3 class="treatment-title">Preenchimento Labial</h3>
-      <p class="treatment-desc">Volumização e definição dos lábios com ácido hialurônico, para resultados naturais que valorizam o seu sorriso.</p>
-      <a href="https://wa.me/5519999999999?text=Olá! Tenho interesse em Preenchimento Labial." target="_blank" class="treatment-link">Agendar avaliação →</a>
-    </div>
- 
-    <div class="treatment-card reveal delay-3">
-      <div class="treatment-icon">📋</div>
-      <h3 class="treatment-title">Planejamento Facial</h3>
-      <p class="treatment-desc">Avaliação completa e personalizada para identificar o melhor conjunto de tratamentos para o seu rosto e objetivos.</p>
-      <a href="https://wa.me/5519999999999?text=Olá! Gostaria de fazer um Planejamento Facial." target="_blank" class="treatment-link">Agendar avaliação →</a>
-    </div>
- 
-  </div>
-</section>
- 
-<!-- ═══ DIFERENCIAIS ══════════════════════════════════ -->
-<section id="diferenciais">
-  <div class="section-label reveal">Por que nos escolher</div>
-  <h2 class="section-title reveal delay-1">Uma experiência <em>diferente</em><br>em cuidado dental</h2>
-  <p class="section-sub reveal delay-2">Cada detalhe do atendimento é pensado para que você se sinta acolhida, segura e satisfeita com cada etapa do seu tratamento.</p>
-  <div class="diff-grid">
-    <div class="diff-card reveal delay-1">
-      <div class="diff-num">01</div>
-      <h3 class="diff-title">Atendimento Humanizado</h3>
-      <p class="diff-text">Você não é apenas mais um paciente. Cada consulta começa com escuta ativa, porque entender você é o primeiro passo para um resultado que realmente faz sentido.</p>
-    </div>
-    <div class="diff-card reveal delay-2">
-      <div class="diff-num">02</div>
-      <h3 class="diff-title">Planejamento Personalizado</h3>
-      <p class="diff-text">Nenhum tratamento é igual ao outro. Criamos um plano exclusivo para o seu rosto, os seus objetivos e o seu estilo de vida.</p>
-    </div>
-    <div class="diff-card reveal delay-3">
-      <div class="diff-num">03</div>
-      <h3 class="diff-title">Estética Natural</h3>
-      <p class="diff-text">Menos é mais. Nossa filosofia é realçar a sua beleza natural, entregando resultados elegantes e discretos que parecem verdadeiramente seus.</p>
-    </div>
-    <div class="diff-card reveal delay-4">
-      <div class="diff-num">04</div>
-      <h3 class="diff-title">Tecnologia & Conforto</h3>
-      <p class="diff-text">Equipamentos modernos, protocolos seguros e um ambiente acolhedor. Porque você merece o melhor — com total tranquilidade em cada visita.</p>
-    </div>
-  </div>
-</section>
- 
-<!-- ═══ RESULTADOS ════════════════════════════════════ -->
-<section id="resultados">
-  <div class="section-label reveal">Resultados Reais</div>
-  <h2 class="section-title reveal delay-1">Transformações que falam <em>por si</em></h2>
-  <p class="section-sub reveal delay-2">Cada resultado é único e reflete o cuidado individualizado que dedicamos a cada paciente.</p>
- 
-  <div class="results-grid">
-    <div class="result-card reveal delay-1">
-      <div class="result-placeholder">
-        <div class="result-placeholder-icon">✦</div>
-        <div class="result-placeholder-text">Caso Clínico<br>Ortodontia</div>
-      </div>
-      <div class="result-overlay"><span class="result-overlay-text">Ortodontia — antes e depois</span></div>
-    </div>
-    <div class="result-card reveal delay-2">
-      <div class="result-placeholder" style="background: linear-gradient(160deg, #D4A5A5 0%, #B8877B 100%);">
-        <div class="result-placeholder-icon">✦</div>
-        <div class="result-placeholder-text">Harmonização<br>Facial</div>
-      </div>
-      <div class="result-overlay"><span class="result-overlay-text">Harmonização Facial</span></div>
-    </div>
-    <div class="result-card reveal delay-3">
-      <div class="result-placeholder" style="background: linear-gradient(160deg, #A8B5A0 0%, #7A9070 100%);">
-        <div class="result-placeholder-icon">✦</div>
-        <div class="result-placeholder-text">Alinhadores<br>Invisíveis</div>
-      </div>
-      <div class="result-overlay"><span class="result-overlay-text">Alinhadores Invisíveis</span></div>
-    </div>
-    <div class="result-card reveal delay-1">
-      <div class="result-placeholder" style="background: linear-gradient(160deg, #C9A96E 0%, #9A7845 100%);">
-        <div class="result-placeholder-icon">✦</div>
-        <div class="result-placeholder-text">Preenchimento<br>Labial</div>
-      </div>
-      <div class="result-overlay"><span class="result-overlay-text">Preenchimento Labial</span></div>
-    </div>
-    <div class="result-card reveal delay-2">
-      <div class="result-placeholder" style="background: linear-gradient(160deg, #EDE3D8 0%, #D4A5A5 100%);">
-        <div class="result-placeholder-icon">✦</div>
-        <div class="result-placeholder-text">Botox<br>Terapêutico</div>
-      </div>
-      <div class="result-overlay"><span class="result-overlay-text">Botox Terapêutico</span></div>
-    </div>
-    <div class="result-card reveal delay-3">
-      <div class="result-placeholder" style="background: linear-gradient(160deg, #2C2420 0%, #5C4F49 100%);">
-        <div class="result-placeholder-icon" style="font-size:1.4rem;">📷</div>
-        <div class="result-placeholder-text" style="color:rgba(253,252,250,0.6);">Adicione seus<br>casos clínicos</div>
-      </div>
-      <div class="result-overlay"><span class="result-overlay-text">Seu caso em destaque</span></div>
-    </div>
-  </div>
-  <p class="results-disclaimer reveal">* Imagens obtidas com autorização dos pacientes. Os resultados podem variar de acordo com cada caso individual.</p>
-</section>
- 
-<!-- ═══ DEPOIMENTOS ═══════════════════════════════════ -->
-<section id="depoimentos">
-  <div class="section-label reveal">Depoimentos</div>
-  <h2 class="section-title reveal delay-1">O que dizem nossas <em>pacientes</em></h2>
-  <div class="testimonials-grid">
- 
-    <div class="testimonial-card reveal delay-1">
-      <div class="testimonial-stars">★★★★★</div>
-      <div class="testimonial-quote">"</div>
-      <p class="testimonial-text">A Dra. Ana transformou meu sorriso e minha autoestima. O atendimento é impecável, humanizado e ela realmente escuta o que você quer. Recomendo de olhos fechados!</p>
-      <div class="testimonial-author">
-        <div class="testimonial-avatar">M</div>
+    </header>
+
+    <main id="conteudo">
+      <section class="hero" id="inicio">
+        <div class="hero-veil"></div>
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="section-eyebrow">Ortodontia e harmonização facial em Campinas</span>
+            <h1>Seu sorriso em harmonia com <span>sua beleza natural</span></h1>
+            <p>
+              Atendimento personalizado para quem busca ortodontia, alinhadores invisíveis e harmonização facial com elegância,
+              segurança e foco em resultados naturais.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" target="_blank" rel="noreferrer" href="https://wa.me/5511999999999?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Ana%20Zanetti.">Agendar consulta</a>
+              <a class="btn btn-secondary" href="#tratamentos">Conhecer tratamentos</a>
+            </div>
+
+            <div class="hero-pills">
+              <div class="hero-pill">Atendimento humanizado</div>
+              <div class="hero-pill">Planejamento individual</div>
+              <div class="hero-pill">Estética natural e sofisticada</div>
+            </div>
+          </div>
+
+          <div class="hero-media-frame">
+            <div class="media-card media-card-tall">
+              <div class="floating-note top-note">Imagem principal da Dra. Ana</div>
+              <div class="floating-note bottom-note">Substitua manualmente depois</div>
+              <div class="placeholder-content">
+                <p class="placeholder-title">Área reservada para foto profissional</p>
+                <p>
+                  Aqui você poderá inserir a imagem oficial da Dra. Ana Zanetti. O bloco já está dimensionado para um retrato
+                  vertical de alto padrão.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="sobre">
+        <div class="container two-columns">
+          <div class="media-card media-card-tall left-media">
+            <div class="placeholder-content">
+              <p class="placeholder-title">Imagem do consultório ou retrato institucional</p>
+              <p>
+                Espaço ideal para foto do ambiente clínico ou retrato complementar, reforçando acolhimento, sofisticação e
+                autoridade profissional.
+              </p>
+            </div>
+          </div>
+
+          <div class="section-copy">
+            <span class="section-eyebrow">Sobre a doutora</span>
+            <h2>Cuidado individualizado, técnica precisa e estética com naturalidade</h2>
+            <p>
+              A Dra. Ana Zanetti une sensibilidade estética e planejamento clínico para valorizar sorrisos e traços faciais com
+              leveza, segurança e respeito à individualidade de cada paciente.
+            </p>
+            <p>
+              Com atuação em <strong>ortodontia</strong> e <strong>harmonização facial</strong>, o atendimento é construído a partir de uma
+              escuta atenta, avaliação criteriosa e foco em resultados elegantes, funcionais e coerentes com a beleza natural de cada
+              pessoa.
+            </p>
+            <p>
+              A proposta é oferecer uma experiência acolhedora e segura, na qual tecnologia, conforto e acompanhamento próximo caminham
+              junto com clareza nas orientações e responsabilidade no planejamento.
+            </p>
+            <p>Se desejar, o campo de <strong>CRO</strong> pode ser inserido nesta área depois, sem alterar a estrutura principal do site.</p>
+
+            <div class="mini-grid">
+              <article class="mini-card">
+                <h3>Atendimento humanizado</h3>
+                <p>Escuta cuidadosa e olhar individual para cada objetivo.</p>
+              </article>
+              <article class="mini-card">
+                <h3>Resultados naturais</h3>
+                <p>Intervenções pensadas para realçar e não descaracterizar.</p>
+              </article>
+              <article class="mini-card">
+                <h3>Tecnologia e conforto</h3>
+                <p>Experiência clínica refinada, funcional e acolhedora.</p>
+              </article>
+              <article class="mini-card">
+                <h3>Acompanhamento próximo</h3>
+                <p>Presença em todas as etapas para segurança e confiança.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft" id="tratamentos">
+        <div class="container">
+          <div class="section-head">
+            <span class="section-eyebrow">Especialidades</span>
+            <h2>Tratamentos pensados para funcionalidade, estética e bem-estar</h2>
+            <p>
+              Cada proposta é apresentada com clareza e construída de forma individual, considerando conforto, proporção facial e os
+              objetivos de cada paciente.
+            </p>
+          </div>
+
+          <div class="card-grid treatments-grid">
+            <article class="service-card">
+              <h3>Ortodontia</h3>
+              <p>Planejamento preciso para alinhar o sorriso com conforto, estética e funcionalidade em cada etapa do tratamento.</p>
+              <a target="_blank" rel="noreferrer" href="https://wa.me/5511999999999?text=Olá%2C%20gostaria%20de%20agendar%20uma%20avaliação.">Agendar avaliação</a>
+            </article>
+            <article class="service-card">
+              <h3>Alinhadores invisíveis</h3>
+              <p>Solução discreta e moderna para quem busca corrigir o sorriso com liberdade, praticidade e acompanhamento próximo.</p>
+              <a target="_blank" rel="noreferrer" href="https://wa.me/5511999999999?text=Olá%2C%20quero%20saber%20mais%20sobre%20alinhadores%20invisíveis.">Saiba mais</a>
+            </article>
+            <article class="service-card">
+              <h3>Harmonização facial</h3>
+              <p>Avaliação individualizada para valorizar traços, respeitar proporções e preservar a naturalidade da expressão.</p>
+              <a target="_blank" rel="noreferrer" href="https://wa.me/5511999999999?text=Olá%2C%20quero%20saber%20mais%20sobre%20harmonização%20facial.">Saiba mais</a>
+            </article>
+            <article class="service-card">
+              <h3>Botox terapêutico e estético</h3>
+              <p>Aplicações estratégicas para suavização estética e apoio em quadros funcionais, como tensão muscular e bruxismo.</p>
+              <a target="_blank" rel="noreferrer" href="https://wa.me/5511999999999?text=Olá%2C%20gostaria%20de%20agendar%20uma%20avaliação.">Agendar avaliação</a>
+            </article>
+            <article class="service-card">
+              <h3>Preenchimento labial</h3>
+              <p>Definição, hidratação e equilíbrio do contorno labial com enfoque em resultado sofisticado e proporcional.</p>
+              <a target="_blank" rel="noreferrer" href="https://wa.me/5511999999999?text=Olá%2C%20quero%20saber%20mais%20sobre%20preenchimento%20labial.">Saiba mais</a>
+            </article>
+            <article class="service-card">
+              <h3>Avaliação facial e planejamento individual</h3>
+              <p>Consulta completa para compreender objetivos, anatomia e possibilidades de tratamento com segurança e clareza.</p>
+              <a target="_blank" rel="noreferrer" href="https://wa.me/5511999999999?text=Olá%2C%20gostaria%20de%20agendar%20uma%20avaliação.">Agendar avaliação</a>
+            </article>
+            <article class="service-card">
+              <h3>Saúde bucal preventiva</h3>
+              <p>Cuidado contínuo para manter a saúde do sorriso, prevenir intercorrências e sustentar resultados no longo prazo.</p>
+              <a target="_blank" rel="noreferrer" href="https://wa.me/5511999999999?text=Olá%2C%20quero%20saber%20mais%20sobre%20saúde%20bucal%20preventiva.">Saiba mais</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="diferenciais">
+        <div class="container two-columns differentials-layout">
+          <div class="section-copy">
+            <span class="section-eyebrow">Diferenciais</span>
+            <h2>Uma experiência clínica pensada para transmitir confiança desde o primeiro contato</h2>
+            <p>
+              O site valoriza o posicionamento premium da profissional e traduz em linguagem visual os atributos mais importantes para
+              conversão: acolhimento, precisão e credibilidade.
+            </p>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card"><h3>Atendimento humanizado</h3><p>Escuta real, orientação clara e uma jornada mais tranquila para o paciente.</p></article>
+            <article class="feature-card"><h3>Planejamento personalizado</h3><p>Cada tratamento nasce de análise individual, objetivos e anatomia facial.</p></article>
+            <article class="feature-card"><h3>Foco em estética natural</h3><p>Resultados que valorizam identidade, equilíbrio e leveza estética.</p></article>
+            <article class="feature-card"><h3>Tecnologia e conforto</h3><p>Ambiente contemporâneo e experiência organizada, segura e acolhedora.</p></article>
+            <article class="feature-card"><h3>Acompanhamento próximo</h3><p>Presença em todas as etapas para segurança e confiança.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft" id="resultados">
+        <div class="container">
+          <div class="section-head split-head">
+            <div>
+              <span class="section-eyebrow">Antes e depois</span>
+              <h2>Uma galeria elegante pronta para receber seus resultados reais</h2>
+              <p>
+                A seção foi estruturada para comportar fotos e vídeos de procedimentos com organização premium, preservando leitura,
+                credibilidade e espaço para observações éticas.
+              </p>
+            </div>
+            <button class="btn btn-secondary" type="button" data-placeholder="A galeria de resultados">Ver estrutura da galeria</button>
+          </div>
+
+          <div class="results-grid">
+            <button class="result-card" type="button" data-placeholder="Caso 01 · Ortodontia">
+              <div class="placeholder-content"><p class="placeholder-title">Caso 01 · Ortodontia</p><p>Área preparada para imagem ou vídeo real do procedimento.</p></div>
+            </button>
+            <button class="result-card" type="button" data-placeholder="Caso 02 · Alinhadores invisíveis">
+              <div class="placeholder-content"><p class="placeholder-title">Caso 02 · Alinhadores invisíveis</p><p>Área preparada para imagem ou vídeo real do procedimento.</p></div>
+            </button>
+            <button class="result-card" type="button" data-placeholder="Caso 03 · Harmonização facial">
+              <div class="placeholder-content"><p class="placeholder-title">Caso 03 · Harmonização facial</p><p>Área preparada para imagem ou vídeo real do procedimento.</p></div>
+            </button>
+            <button class="result-card" type="button" data-placeholder="Caso 04 · Preenchimento labial">
+              <div class="placeholder-content"><p class="placeholder-title">Caso 04 · Preenchimento labial</p><p>Área preparada para imagem ou vídeo real do procedimento.</p></div>
+            </button>
+          </div>
+
+          <p class="results-note">
+            Imagens de resultados devem ser utilizadas com autorização do paciente. Cada caso possui características próprias, e os
+            resultados variam conforme avaliação individual e indicação clínica.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="depoimentos">
+        <div class="container">
+          <div class="section-head">
+            <span class="section-eyebrow">Depoimentos</span>
+            <h2>Confiança, autoestima e satisfação traduzidas em experiências reais</h2>
+            <p>
+              Os textos abaixo já servem como estrutura elegante para avaliações de pacientes e podem ser ajustados depois com
+              depoimentos autênticos da clínica.
+            </p>
+          </div>
+
+          <div class="card-grid testimonials-grid">
+            <article class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p>“Fui acolhida desde o primeiro contato. O atendimento foi cuidadoso, claro e muito humano.”</p>
+              <strong>Mariana R.</strong>
+              <span>Paciente</span>
+            </article>
+            <article class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p>“A Dra. Ana transmite segurança e delicadeza. Tudo foi pensado de forma natural e personalizada.”</p>
+              <strong>Camila T.</strong>
+              <span>Paciente</span>
+            </article>
+            <article class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p>“Além do resultado estético, senti um cuidado genuíno em cada etapa. O consultório passa conforto e profissionalismo.”</p>
+              <strong>Fernanda L.</strong>
+              <span>Paciente</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft" id="consulta">
+        <div class="container two-columns process-layout">
+          <div class="section-copy">
+            <span class="section-eyebrow">Como funciona</span>
+            <h2>Uma jornada clara, elegante e confortável do primeiro contato ao acompanhamento</h2>
+            <p>
+              O percurso foi desenhado para reduzir dúvidas, aumentar segurança e facilitar o agendamento, reforçando o foco do site em
+              conversão qualificada.
+            </p>
+          </div>
+
+          <div class="timeline-list">
+            <article class="timeline-card"><span>01</span><div><h3>Agendamento</h3><p>Você escolhe o melhor canal de contato e recebe orientação inicial para marcar sua consulta.</p></div></article>
+            <article class="timeline-card"><span>02</span><div><h3>Avaliação personalizada</h3><p>Análise clínica e estética cuidadosa para compreender necessidades, expectativas e possibilidades.</p></div></article>
+            <article class="timeline-card"><span>03</span><div><h3>Planejamento do tratamento</h3><p>Definição de um plano individual, claro e responsável, respeitando funcionalidade, harmonia e naturalidade.</p></div></article>
+            <article class="timeline-card"><span>04</span><div><h3>Acompanhamento</h3><p>Monitoramento próximo para garantir segurança, evolução consistente e suporte ao longo do processo.</p></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section cta-section">
+        <div class="container">
+          <div class="cta-banner">
+            <div>
+              <span class="section-eyebrow eyebrow-dark">Agendamento</span>
+              <h2>Agende sua consulta e descubra o melhor tratamento para o seu sorriso e harmonia facial.</h2>
+              <p>
+                Uma presença digital sofisticada, com copy clara e estrutura pronta para campanhas futuras, captação via WhatsApp e
+                relacionamento com pacientes.
+              </p>
+            </div>
+            <a class="btn btn-white" target="_blank" rel="noreferrer" href="https://wa.me/5511999999999?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Ana%20Zanetti.">Falar no WhatsApp</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contato">
+        <div class="container contact-layout">
+          <div class="contact-panel">
+            <span class="section-eyebrow">Localização e contato</span>
+            <h2>Dentista em Campinas com estrutura digital pronta para receber novos pacientes</h2>
+            <p>
+              A área de contato já está organizada para endereço, mapa, telefone, WhatsApp, Instagram e futuras campanhas de tráfego com
+              foco em conversão.
+            </p>
+
+            <div class="contact-list">
+              <div class="contact-item"><strong>Cidade</strong><p>Campinas · adicione aqui o endereço completo da clínica.</p></div>
+              <div class="contact-item"><strong>Telefone</strong><p>(00) 0000-0000 · substitua pelo número oficial.</p></div>
+              <div class="contact-item"><strong>WhatsApp</strong><p>Clique no botão para personalizar com o contato final da clínica.</p></div>
+              <div class="contact-item"><strong>Instagram</strong><p>@seuinstagram · área pronta para integração com a marca.</p></div>
+            </div>
+
+            <div class="contact-actions">
+              <a class="btn btn-secondary" target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/Campinas">Abrir localização</a>
+              <a class="btn btn-secondary" target="_blank" rel="noreferrer" href="https://instagram.com/">Acessar Instagram</a>
+            </div>
+
+            <div class="media-card">
+              <div class="placeholder-content">
+                <p class="placeholder-title">Mapa ou foto da clínica</p>
+                <p>Este espaço pode receber o mapa, uma foto da fachada ou outro recurso visual de localização posteriormente.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-shell">
+            <span class="section-eyebrow">Formulário de contato</span>
+            <h2>Solicite seu atendimento</h2>
+            <p>Este formulário foi configurado para encaminhar o interesse diretamente ao WhatsApp.</p>
+
+            <form id="contactForm" class="contact-form">
+              <label>
+                <span>Nome</span>
+                <input type="text" id="nome" placeholder="Seu nome" />
+              </label>
+              <label>
+                <span>Telefone</span>
+                <input type="text" id="telefone" placeholder="(00) 00000-0000" />
+              </label>
+              <label>
+                <span>Mensagem</span>
+                <textarea id="mensagem" placeholder="Conte brevemente o que você procura"></textarea>
+              </label>
+              <button class="btn btn-primary btn-full" type="submit">Enviar para o WhatsApp</button>
+            </form>
+
+            <div class="seo-note">
+              SEO básico incorporado ao conteúdo com foco em termos como <strong>dentista em Campinas</strong>, <strong>harmonização facial em Campinas</strong>, <strong>ortodontia em Campinas</strong> e <strong>alinhadores invisíveis em Campinas</strong>.
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-layout">
         <div>
-          <div class="testimonial-name">Mariana S.</div>
-          <div class="testimonial-role">Paciente – Ortodontia</div>
+          <p class="footer-title">Dra. Ana Zanetti</p>
+          <p>Odontologia estética, ortodontia e harmonização facial em Campinas. Campo de CRO disponível para inserção posterior.</p>
+        </div>
+        <div class="footer-links">
+          <a target="_blank" rel="noreferrer" href="https://instagram.com/">Instagram</a>
+          <a target="_blank" rel="noreferrer" href="https://wa.me/5511999999999?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Ana%20Zanetti.">WhatsApp</a>
+          <a target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/Campinas">Localização</a>
         </div>
       </div>
-    </div>
- 
-    <div class="testimonial-card reveal delay-2">
-      <div class="testimonial-stars">★★★★★</div>
-      <div class="testimonial-quote">"</div>
-      <p class="testimonial-text">Fiz harmonização facial e preenchimento labial com a Dra. Ana. O resultado foi absolutamente natural e elegante. Ela tem um olhar artístico incrível e muita sensibilidade.</p>
-      <div class="testimonial-author">
-        <div class="testimonial-avatar">C</div>
-        <div>
-          <div class="testimonial-name">Carolina V.</div>
-          <div class="testimonial-role">Paciente – Harmonização Facial</div>
-        </div>
-      </div>
-    </div>
- 
-    <div class="testimonial-card reveal delay-3">
-      <div class="testimonial-stars">★★★★★</div>
-      <div class="testimonial-quote">"</div>
-      <p class="testimonial-text">Usava alinhadores há meses com outro profissional sem ver resultado. Quando comecei com a Dra. Ana, tudo mudou. Planejamento cuidadoso e acompanhamento próximo em cada etapa.</p>
-      <div class="testimonial-author">
-        <div class="testimonial-avatar">J</div>
-        <div>
-          <div class="testimonial-name">Juliana R.</div>
-          <div class="testimonial-role">Paciente – Alinhadores Invisíveis</div>
-        </div>
-      </div>
-    </div>
- 
-  </div>
-</section>
- 
-<!-- ═══ COMO FUNCIONA ══════════════════════════════════ -->
-<section id="como-funciona">
-  <div style="text-align:center;max-width:560px;margin:0 auto 1rem;">
-    <div class="section-label reveal" style="justify-content:center;">Como funciona</div>
-    <h2 class="section-title reveal delay-1" style="text-align:center;">Sua jornada rumo ao <em>sorriso ideal</em></h2>
-  </div>
-  <div class="steps-grid">
-    <div class="step-card reveal delay-1">
-      <div class="step-num">1</div>
-      <h3 class="step-title">Agendamento</h3>
-      <p class="step-text">Entre em contato pelo WhatsApp ou formulário para marcar sua consulta de forma rápida e simples.</p>
-    </div>
-    <div class="step-card reveal delay-2">
-      <div class="step-num">2</div>
-      <h3 class="step-title">Avaliação</h3>
-      <p class="step-text">Consulta completa e personalizada para entender seus objetivos, anseios e necessidades estéticas e funcionais.</p>
-    </div>
-    <div class="step-card reveal delay-3">
-      <div class="step-num">3</div>
-      <h3 class="step-title">Planejamento</h3>
-      <p class="step-text">Elaboramos um plano de tratamento individualizado com as melhores opções para o seu caso e estilo de vida.</p>
-    </div>
-    <div class="step-card reveal delay-4">
-      <div class="step-num">4</div>
-      <h3 class="step-title">Acompanhamento</h3>
-      <p class="step-text">Suporte próximo em cada fase, com retornos periódicos para garantir resultados perfeitos e duradouros.</p>
-    </div>
-  </div>
-</section>
- 
-<!-- ═══ CTA ═══════════════════════════════════════════ -->
-<section id="cta">
-  <div class="section-label reveal" style="justify-content:center;">Pronta para o próximo passo?</div>
-  <h2 class="cta-title reveal delay-1">
-    Agende sua consulta e descubra o tratamento <em>ideal</em> para você
-  </h2>
-  <p class="cta-sub reveal delay-2">
-    Seu sorriso merece atenção especializada, cuidado individualizado e um resultado que combine com a sua essência.
-  </p>
-  <a href="https://wa.me/5519999999999?text=Olá! Gostaria de agendar uma consulta com a Dra. Ana Zanetti." target="_blank" class="btn-whatsapp reveal delay-3">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    Agendar pelo WhatsApp
-  </a>
-</section>
- 
-<!-- ═══ CONTATO ════════════════════════════════════════ -->
-<section id="contato">
-  <div class="contact-info reveal-left">
-    <div class="section-label">Contato & Localização</div>
-    <h2 class="section-title">Venha nos <em>visitar</em></h2>
-    <p class="section-sub" style="margin-bottom: 2.5rem;">Estamos em Campinas, SP, prontas para receber você com todo o cuidado que você merece.</p>
- 
-    <div class="contact-item">
-      <div class="contact-icon">📍</div>
-      <div>
-        <div class="contact-item-label">Endereço</div>
-        <div class="contact-item-value">Rua [Nome da Rua], 000 — Sala 00<br>Bairro, Campinas — SP</div>
-      </div>
-    </div>
- 
-    <div class="contact-item">
-      <div class="contact-icon">📱</div>
-      <div>
-        <div class="contact-item-label">WhatsApp</div>
-        <div class="contact-item-value"><a href="https://wa.me/5519999999999" target="_blank">(19) 9 9999-9999</a></div>
-      </div>
-    </div>
- 
-    <div class="contact-item">
-      <div class="contact-icon">📸</div>
-      <div>
-        <div class="contact-item-label">Instagram</div>
-        <div class="contact-item-value"><a href="https://instagram.com/draanazanetti" target="_blank">@draanazanetti</a></div>
-      </div>
-    </div>
- 
-    <div class="contact-item">
-      <div class="contact-icon">🕐</div>
-      <div>
-        <div class="contact-item-label">Horário de Atendimento</div>
-        <div class="contact-item-value">Seg – Sex: 9h às 18h<br>Sáb: 9h às 13h</div>
-      </div>
-    </div>
- 
-    <a href="https://maps.google.com/?q=Campinas,SP" target="_blank" class="map-wrap">
-      <div class="map-placeholder">
-        <div class="map-placeholder-icon">🗺️</div>
-        <div class="map-placeholder-text">Clique para abrir no mapa<br><small style="opacity:.6">Campinas, SP</small></div>
-      </div>
-    </a>
-  </div>
- 
-  <div class="contact-form reveal-right">
-    <div class="section-label">Envie uma mensagem</div>
-    <h2 class="section-title" style="margin-bottom:2rem;">Fale <em>conosco</em></h2>
- 
-    <div class="form-row">
-      <div class="form-group">
-        <label class="form-label">Nome</label>
-        <input type="text" class="form-input" placeholder="Seu nome completo">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Telefone</label>
-        <input type="tel" class="form-input" placeholder="(19) 9 0000-0000">
-      </div>
-    </div>
- 
-    <div class="form-group">
-      <label class="form-label">E-mail</label>
-      <input type="email" class="form-input" placeholder="seu@email.com">
-    </div>
- 
-    <div class="form-group">
-      <label class="form-label">Tratamento de interesse</label>
-      <select class="form-select">
-        <option value="" disabled selected>Selecione um tratamento</option>
-        <option>Ortodontia</option>
-        <option>Alinhadores Invisíveis</option>
-        <option>Harmonização Facial</option>
-        <option>Botox Terapêutico</option>
-        <option>Preenchimento Labial</option>
-        <option>Avaliação e Planejamento</option>
-        <option>Outro</option>
-      </select>
-    </div>
- 
-    <div class="form-group">
-      <label class="form-label">Mensagem</label>
-      <textarea class="form-textarea" placeholder="Conte-nos um pouco mais sobre o que você procura..."></textarea>
-    </div>
- 
-    <button class="btn-primary" onclick="sendForm()" style="width:100%;justify-content:center;margin-top:0.5rem;">
-      Enviar mensagem
-    </button>
- 
-    <p style="text-align:center;margin-top:1.5rem;font-size:0.75rem;color:var(--text-light);">
-      Ou fale diretamente pelo WhatsApp para resposta imediata ✦
-    </p>
-    <a href="https://wa.me/5519999999999?text=Olá! Vim pelo site e gostaria de mais informações." target="_blank" class="btn-outline" style="width:100%;justify-content:center;margin-top:0.5rem;">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Chamar no WhatsApp
-    </a>
-  </div>
-</section>
- 
-<!-- ═══ FOOTER ════════════════════════════════════════ -->
-<footer>
-  <div>
-    <div class="footer-logo">Dra. Ana <span>Zanetti</span></div>
-    <div class="footer-logo-sub">CRO-SP 000000 · Campinas, SP</div>
-  </div>
-  <div class="footer-center">
-    <p class="footer-copy">
-      © 2025 Dra. Ana Zanetti — Todos os direitos reservados.<br>
-      Ortodontia & Harmonização Facial em Campinas, SP.
-    </p>
-  </div>
-  <div class="footer-social">
-    <a href="https://instagram.com/draanazanetti" target="_blank" class="social-link" title="Instagram">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-    </a>
-    <a href="https://wa.me/5519999999999" target="_blank" class="social-link" title="WhatsApp">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    </a>
-    <a href="https://maps.google.com/?q=Campinas,SP" target="_blank" class="social-link" title="Localização">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-    </a>
-  </div>
-</footer>
- 
-<!-- ═══ FLOAT WA ═══════════════════════════════════════ -->
-<a href="https://wa.me/5519999999999?text=Olá! Gostaria de agendar uma consulta com a Dra. Ana Zanetti." target="_blank" class="whatsapp-float" title="Fale conosco pelo WhatsApp">
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
- 
-<script>
-// ── NAV scroll ──────────────────────────────────────
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 20);
-});
- 
-// ── Hamburger ───────────────────────────────────────
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobileMenu');
-hamburger.addEventListener('click', () => {
-  mobileMenu.classList.toggle('open');
-});
-function closeMobile() { mobileMenu.classList.remove('open'); }
- 
-// ── Reveal on scroll ────────────────────────────────
-const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-revealEls.forEach(el => observer.observe(el));
- 
-// ── Form ────────────────────────────────────────────
-function sendForm() {
-  const name = document.querySelector('input[type="text"]').value;
-  const phone = document.querySelector('input[type="tel"]').value;
-  const treatment = document.querySelector('select').value;
-  const message = document.querySelector('textarea').value;
-  if (!name || !phone) {
-    alert('Por favor, preencha nome e telefone.');
-    return;
-  }
-  const text = `Olá! Meu nome é ${name}, telefone ${phone}. Tenho interesse em: ${treatment || 'não especificado'}. ${message}`;
-  window.open(`https://wa.me/5519999999999?text=${encodeURIComponent(text)}`, '_blank');
-}
- 
-// ── Smooth scroll for anchor links ──────────────────
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      const offset = 80;
-      const top = target.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({ top, behavior: 'smooth' });
-    }
-  });
-});
-</script>
-</body>
+    </footer>
+
+    <a class="whatsapp-floating" target="_blank" rel="noreferrer" href="https://wa.me/5511999999999?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Ana%20Zanetti.">WhatsApp</a>
+
+    <script src="script.js"></script>
+  </body>
 </html>
